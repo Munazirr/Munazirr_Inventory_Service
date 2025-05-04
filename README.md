@@ -8,10 +8,12 @@ This microservice manages stock quantities for products. It verifies product exi
 ## ✅ Overview
 
 The Inventory Service provides REST APIs to:
-- Add stock for a product
-- View current stock
+-  Add or update stock for products
+- Retrieve current stock
 - Reduce stock when an order is placed
-
+- Communicates with the Product Service to verify product existence
+- Dockerized with `docker-compose`
+- Swagger UI for API documentation
 ---
 
 ## ⚙️ Setup Instructions
@@ -43,7 +45,7 @@ PRODUCT_SERVICE_URL=http://localhost:8080
 ```bash
 docker-compose up --build
 ```
-Visit the service at: `http://localhost:3002`  
+📍Visit the service at: `http://localhost:3002`  
 Swagger Docs: `http://localhost:3002/api-docs`
 
 ### 5. Run Without Docker (Development Mode)

@@ -16,20 +16,29 @@ The Inventory Service provides REST APIs to:
 - Swagger UI for API documentation
 ---
 
+## 🚀Tech Stack
+
+- Node.js (Express.js)
+- PostgreSQL
+- Docker
+- Swagger (OpenAPI for documentation)
+-   Axios (for calling Product Service)
+---
+
 ## ⚙️ Setup Instructions
 
-### 1. Clone the Repository
+### 1. 🧱Clone the Repository
 ```bash
 git clone <your-repo-url>
 cd inventory-service
 ```
 
-### 2. Install Dependencies
+### 2. 🔗Install Dependencies
 ```bash
 npm install
 ```
 
-### 3. Setup Environment Variables
+### 3. 📌Setup Environment Variables
 Create a `.env` file in the root directory:
 ```env
 PORT=3002
@@ -87,7 +96,7 @@ Using **Sequelize ORM** with `sequelize.sync()` for schema creation. In producti
 
 Available at: `http://localhost:3002/api-docs`
 
-### POST `/inventory`
+### 🛠️ POST `/inventory`
 - Add or update stock for a product.
 - **Request Body:**
 ```json
@@ -97,10 +106,10 @@ Available at: `http://localhost:3002/api-docs`
 }
 ```
 
-### GET `/inventory/{productId}`
+### 🛠️ GET `/inventory/{productId}`
 - Fetch stock information by product ID.
 
-### POST `/inventory/{productId}/reduce`
+### 🛠️ POST `/inventory/{productId}/reduce`
 - Reduce stock for a product.
 - **Request Body:**
 ```json
@@ -132,7 +141,7 @@ docker-compose up --build
 
 ---
 
-## 📄 License
+## 📝 License
 
 This project is part of an M.Tech assignment for the Scalable Services subject.
 

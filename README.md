@@ -1,7 +1,7 @@
 # Inventory_Service
 # 📦 Inventory Microservice
 
-This microservice manages stock quantities for products. It verifies product existence through the Product Service before modifying inventory.
+This microservice manages stock quantities for products using Js. It verifies product existence through the Product Service before modifying inventory. Built as part of a scalable services assignment. It includes admin and customer-facing APIs, PostgreSQL database support, Dockerized setup, and Swagger documentation.
 
 ---
 

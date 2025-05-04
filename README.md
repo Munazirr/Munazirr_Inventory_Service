@@ -1,4 +1,4 @@
-# Munazirr_Inventory_Service
+# Inventory_Service
 # 📦 Inventory Microservice
 
 This microservice manages stock quantities for products. It verifies product existence through the Product Service before modifying inventory.

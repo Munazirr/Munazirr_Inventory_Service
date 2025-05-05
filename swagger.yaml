@@ -1,0 +1,100 @@
+openapi: 3.0.0
+info:
+  title: Inventory Service API
+  version: 1.0.0
+  description: API for managing product stock in the inventory.
+
+servers:
+  - url: http://localhost:3002
+
+paths:
+  /inventory:
+    post:
+      summary: Add stock for a product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - productId
+                - quantity
+              properties:
+                productId:
+                  type: integer
+                  example: 101
+                quantity:
+                  type: integer
+                  example: 10
+      responses:
+        '201':
+          description: Stock added or updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Inventory'
+        '400':
+          description: Bad request or product not found
+
+  /inventory/{productId}:
+    get:
+      summary: Get stock data for a product
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Stock found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Inventory'
+        '404':
+          description: Inventory data not found
+
+  /inventory/{productId}/reduce:
+    post:
+      summary: Reduce stock when an order is placed
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - quantity
+              properties:
+                quantity:
+                  type: integer
+                  example: 2
+      responses:
+        '200':
+          description: Stock reduced successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Inventory'
+        '400':
+          description: Insufficient stock or invalid product
+
+components:
+  schemas:
+    Inventory:
+      type: object
+      properties:
+        id:
+          type: integer
+        productId:
+          type: integer
+        quantity:
+          type: integer

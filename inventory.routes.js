@@ -1,5 +1,5 @@
 const express = require('express');
-const controller = require('../controllers/inventory.controller');
+const controller = require('./controllers/inventory.controller.js');
 const router = express.Router();
 
 router.post('/', controller.addStock);

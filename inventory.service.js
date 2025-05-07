@@ -1,4 +1,4 @@
-const Inventory = require('../models/inventory.model');
+const Inventory = require('./models/inventory.model');
 const { validateProduct } = require('./product.service');
 
 async function addStock(productId, quantity) {
@@ -27,3 +27,4 @@ async function reduceStock(productId, quantity) {
 }
 
 module.exports = { addStock, getStock, reduceStock };
+
